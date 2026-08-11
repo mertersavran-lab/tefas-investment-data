@@ -1,19 +1,35 @@
-CLAUDE DAILY TEFAS DATA RULE
+CLAUDE DAILY TEFAS DATA RULE — V2
 
-For TEFAS quantitative screening, use TEFAS_DAILY_DATA.csv in this folder as the primary screening universe.
+Use the GitHub-generated TEFAS files in this order:
 
-Key fields:
-- return_5d_pct vs previous_5d_pct: non-overlapping short-term momentum comparison
-- return_20d_pct vs previous_20d_pct: non-overlapping medium-term momentum comparison
-- acceleration_5d_pp / acceleration_20d_pp: recent acceleration
-- return_60d_pct / return_126d_pct / return_252d_pct: medium/longer performance context
-- volatility_20d_ann_pct: short-term annualized volatility
-- max_drawdown_60d_pct: recent downside
-- distance_from_60d_high_pct: how extended the move is versus its 60-day high
-- investability_hint: heuristic only; VERIFY_ELIGIBILITY must be independently checked before an actionable recommendation
-- is_current: false means the fund's latest record may be stale/inactive
-- portfolio allocation columns are the latest available TEFAS breakdown when present
+1) TEFAS_SCREENING_REPORT.md
+   - This is the primary daily quantitative pre-screen.
+   - It is generated programmatically from the full TEFAS_DAILY_DATA.csv universe.
+   - Treat it as STAGE 1, not as an investment recommendation.
 
-Do not treat theme_hint or investability_hint as verified official classifications. They are heuristic labels generated from the fund name.
+2) TEFAS_SHORTLIST.csv
+   - Contains the same top quantitative candidates in structured form.
+   - Use it for candidate-by-candidate comparison.
 
-Screen the entire file before doing web research. Then use KAP, TEFAS, fund manager disclosures and reliable current sources to validate shortlisted candidates, eligibility, catalysts and risks.
+3) TEFAS_SCREEN_STATUS.json
+   - Use it to confirm dataset date, universe counts and shortlist generation success.
+
+4) TEFAS_DAILY_DATA.csv
+   - This is the full dataset.
+   - In Claude Project Knowledge it may be accessed through RAG/chunk retrieval, so DO NOT claim you programmatically scanned the whole CSV yourself.
+   - Use it mainly for targeted lookups of specific fund codes when useful.
+
+DAILY PROCESS
+
+A. First verify TEFAS_SCREEN_STATUS.json and dataset freshness.
+B. Read the pre-ranked candidates in TEFAS_SCREENING_REPORT.md / TEFAS_SHORTLIST.csv.
+C. Perform fresh web research on the strongest candidates.
+D. Prefer primary sources: KAP, TEFAS, fund manager disclosures, official macro sources.
+E. Verify retail investability before calling any candidate actionable.
+F. Check portfolio overlap and concentration against CURRENT PORTFOLIO.
+G. Compare any proposed deployment of capital with the user's current deposit benchmark.
+H. Do not recommend a fund merely because the quantitative script ranked it highly.
+I. If the report is stale or generation failed, explicitly say so and do not present it as a fresh full-universe screen.
+
+The full-universe quantitative scan is performed by GitHub Actions/Python.
+Your role is to interpret, validate, research, compare and make portfolio-level judgments.
