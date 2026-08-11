@@ -11,7 +11,7 @@ permissions:
 jobs:
   update:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 25
 
     steps:
       - name: Checkout repository
@@ -31,14 +31,18 @@ jobs:
       - name: Update TEFAS dataset
         run: python update_tefas.py
 
+      - name: Build quantitative shortlist
+        run: python build_shortlist.py
+
       - name: Commit updated data
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add TEFAS_DAILY_DATA.csv TEFAS_UPDATE_STATUS.json data/tefas_history.csv.gz
+          git add TEFAS_SHORTLIST.csv TEFAS_SCREENING_REPORT.md TEFAS_SCREEN_STATUS.json
           if git diff --cached --quiet; then
             echo "No data changes to commit."
           else
-            git commit -m "Daily TEFAS data update"
+            git commit -m "Daily TEFAS data and shortlist update"
             git push
           fi
