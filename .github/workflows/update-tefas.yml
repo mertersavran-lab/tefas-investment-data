@@ -1,1 +1,44 @@
+name: Update TEFAS data
 
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "17 6 * * 1-5"
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: "pip"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Update TEFAS dataset
+        run: python update_tefas.py
+
+      - name: Commit updated data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add TEFAS_DAILY_DATA.csv TEFAS_UPDATE_STATUS.json data/tefas_history.csv.gz
+          if git diff --cached --quiet; then
+            echo "No data changes to commit."
+          else
+            git commit -m "Daily TEFAS data update"
+            git push
+          fi
