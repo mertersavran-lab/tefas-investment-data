@@ -3,7 +3,8 @@ name: Update TEFAS data
 on:
   workflow_dispatch:
   schedule:
-    - cron: "17 6 * * 1-5"
+    - cron: "37 9 * * 1-5"
+      timezone: "Europe/Istanbul"
 
 permissions:
   contents: write
