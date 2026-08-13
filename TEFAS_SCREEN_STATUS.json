@@ -1,7 +1,7 @@
 {
   "success": true,
-  "dataset_latest_date": "2026-08-12",
-  "source_generated_at_local": "2026-08-12 07:22:58",
+  "dataset_latest_date": "2026-08-13",
+  "source_generated_at_local": "2026-08-13 07:19:45",
   "source_fund_count": 2056,
   "classification_counts": {
     "RETAIL_CANDIDATE": 607,
