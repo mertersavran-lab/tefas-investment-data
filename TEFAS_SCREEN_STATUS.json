@@ -1,14 +1,14 @@
 {
   "success": true,
-  "dataset_latest_date": "2026-08-14",
-  "source_generated_at_local": "2026-08-14 09:48:11",
+  "dataset_latest_date": "2026-08-17",
+  "source_generated_at_local": "2026-08-17 08:27:45",
   "source_fund_count": 2057,
   "classification_counts": {
     "RETAIL_CANDIDATE": 607,
     "VERIFY_ELIGIBILITY": 1297,
     "EXCLUDE": 153
   },
-  "screenable_retail_count": 576,
+  "screenable_retail_count": 577,
   "shortlist_count": 30,
   "shortlist_file": "TEFAS_SHORTLIST.csv",
   "report_file": "TEFAS_SCREENING_REPORT.md"
