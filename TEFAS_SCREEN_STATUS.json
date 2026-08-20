@@ -1,14 +1,14 @@
 {
   "success": true,
-  "dataset_latest_date": "2026-08-19",
-  "source_generated_at_local": "2026-08-19 08:09:03",
-  "source_fund_count": 2058,
+  "dataset_latest_date": "2026-08-20",
+  "source_generated_at_local": "2026-08-20 06:24:53",
+  "source_fund_count": 2060,
   "classification_counts": {
-    "RETAIL_CANDIDATE": 608,
-    "VERIFY_ELIGIBILITY": 1297,
+    "RETAIL_CANDIDATE": 609,
+    "VERIFY_ELIGIBILITY": 1298,
     "EXCLUDE": 153
   },
-  "screenable_retail_count": 577,
+  "screenable_retail_count": 579,
   "shortlist_count": 30,
   "shortlist_file": "TEFAS_SHORTLIST.csv",
   "report_file": "TEFAS_SCREENING_REPORT.md"
