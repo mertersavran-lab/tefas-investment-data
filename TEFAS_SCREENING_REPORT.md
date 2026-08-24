@@ -1,7 +1,7 @@
 # TEFAS DAILY QUANTITATIVE SCREEN
 
 - Dataset latest date: **2026-08-24**
-- Source dataset generated at: **2026-08-24 09:12:33**
+- Source dataset generated at: **2026-08-24 09:36:26**
 - Total funds in source dataset: **2063**
 - RETAIL_CANDIDATE: **612**
 - VERIFY_ELIGIBILITY: **1298**
