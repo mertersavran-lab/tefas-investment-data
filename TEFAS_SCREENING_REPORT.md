@@ -1,66 +1,98 @@
-# TEFAS DAILY QUANTITATIVE SCREEN
+# TEFAS DAILY MULTI-LANE QUANTITATIVE SCREEN — V2
 
 - Dataset latest date: **2026-08-25**
-- Source dataset generated at: **2026-08-25 06:34:07**
+- Source dataset generated timestamp (as supplied): **2026-08-25 07:23:50**
 - Total funds in source dataset: **2063**
 - RETAIL_CANDIDATE: **612**
 - VERIFY_ELIGIBILITY: **1298**
 - EXCLUDE: **153**
 - Current retail funds with >= 80 observations before completeness filter: **579**
 - Quantitatively screenable retail funds after required-data filter: **579**
-- Final shortlist size: **30**
+- Combined multi-lane shortlist size: **45**
 
 ## IMPORTANT
 
-This is a quantitative pre-screen, NOT an investment recommendation.
-Claude should research KAP/TEFAS/fund-manager disclosures and current macro/market conditions before turning any candidate into an actionable recommendation.
-The score is heuristic and prioritizes improving momentum while penalizing obvious short-term overextension and weak risk characteristics.
+This is a quantitative discovery screen, NOT an investment recommendation.
+The same full retail universe is evaluated through four different lenses so that discovery is not limited to short-term momentum.
+Claude must perform fresh Stage-2 KAP/TEFAS/fund-manager research and Stage-3 portfolio-fit analysis before assigning actionable status.
+Diversification scores use exposure proxies and fund-name/theme hints when detailed allocation data is missing; actual holdings and overlap MUST be verified in Stage 2.
+Defensive scores are NOT a claim that a fund beats the user's deposit. The deposit benchmark comparison remains a Stage-3 calculation.
 
 ## SCREEN LOGIC
 
-- EARLY_MOMENTUM: positive short- and medium-window acceleration with moderate 20d/60d returns.
-- REVERSAL: previous 20d period was negative, but current momentum has improved materially.
-- TREND_CONTINUATION: positive 5d/20d/60d trend with positive 20d acceleration, subject to extension limits.
-- Score emphasizes 20d and 5d acceleration; volatility and drawdown are explicit risk controls.
-- `theme_hint` and `primary_exposure` are screening aids, not substitutes for official KAP/TEFAS classification.
+- TACTICAL: early momentum, reversal and trend continuation with overextension penalties.
+- CORE: medium/long-term persistence, lower volatility/drawdown, scale and consistency.
+- DIVERSIFICATION: non-domestic/broader exposure potential plus risk-adjusted persistence.
+- DEFENSIVE: lower volatility/drawdown and lower risky-asset exposure with positive medium-term performance.
+- Different fund codes do not automatically mean diversification; portfolio overlap must be researched separately.
 
-## TOP QUANTITATIVE CANDIDATES
+## TACTICAL — TOP CANDIDATES
 
-|#|Kod|Fon|Tema|Bucket|Skor|5G|Önceki 5G|20G|Önceki 20G|60G|Vol 20G|Max DD 60G|60G Zirve Uzaklık|Ana Pozisyon|
-|---:|---|---|---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---|
-|1|DGF|A1 CAPİTAL PORTFÖY DEĞİŞKEN FON|Değişken|REVERSAL|81.80|3.65%|0.33%|15.12%|-1.53%|15.42%|12.04%|-5.27%|0.00%|Ters Repo %16.2|
-|2|BV1|BV PORTFÖY BİRİNCİ HİSSE SENEDİ (TL) FON (HİSSE SENEDİ YOĞUN FON)|Hisse Senedi|EARLY_MOMENTUM + TREND_CONTINUATION|79.38|4.91%|-1.89%|10.00%|1.26%|14.74%|25.24%|-6.86%|0.00%|TR Hisse %92.0|
-|3|DNF|A1 CAPİTAL PORTFÖY DİNAMİK FON SEPETİ FONU|Fon Sepeti|REVERSAL + EARLY_MOMENTUM + TREND_CONTINUATION|78.97|2.96%|0.68%|8.98%|-0.36%|10.50%|12.50%|-3.31%|0.00%|Yatırım Fonu %89.6|
-|4|IDI|AZİMUT PORTFÖY İNŞAAT SEKTÖRÜ HİSSE SENEDİ FONU (HİSSE SENEDİ YOĞUN FON)|Hisse Senedi|REVERSAL|78.75|7.36%|1.86%|16.00%|-1.86%|15.68%|25.82%|-7.66%|0.00%||
-|5|YPR|AZİMUT PORTFÖY YILDIZ PAZAR ŞİRKETLERİ HİSSE SENEDİ FONU (HİSSE SENEDİ YOĞUN FON)|Hisse Senedi|REVERSAL + EARLY_MOMENTUM + TREND_CONTINUATION|78.52|4.18%|-0.65%|7.00%|-1.55%|10.32%|16.25%|-7.23%|0.00%||
-|6|OHK|OYAK PORTFÖY KATILIM HİSSE SENEDİ (TL) FONU (HİSSE SENEDİ YOĞUN FON)|Hisse Senedi|EARLY_MOMENTUM + TREND_CONTINUATION|78.50|4.70%|2.49%|9.40%|1.96%|12.83%|15.79%|-4.87%|0.00%||
-|7|NKT|NUROL PORTFÖY BİRİNCİ KATILIM HİSSE SENEDİ FONU (HİSSE SENEDİ YOĞUN FON)|Hisse Senedi|EARLY_MOMENTUM + TREND_CONTINUATION|76.74|4.47%|1.73%|8.75%|3.09%|12.76%|13.21%|-4.53%|0.00%|TR Hisse %86.0|
-|8|GL1|AZİMUT PYŞ BİRİNCİ HİSSE SENEDİ FONU (HİSSE SENEDİ YOĞUN FON)|Hisse Senedi|EARLY_MOMENTUM + TREND_CONTINUATION|76.21|4.53%|0.87%|8.46%|0.07%|12.62%|21.02%|-7.03%|0.00%||
-|9|TZD|ZİRAAT PORTFÖY HİSSE SENEDİ FONU (HİSSE SENEDİ YOĞUN FON)|Hisse Senedi|REVERSAL + EARLY_MOMENTUM + TREND_CONTINUATION|76.05|4.25%|0.81%|7.18%|-2.22%|11.33%|17.02%|-7.97%|0.00%|TR Hisse %88.6|
-|10|NLE|NUROL PORTFÖY EMLAK SEKTÖRÜ HİSSE SENEDİ FONU (HİSSE SENEDİ YOĞUN FON)|Hisse Senedi|REVERSAL + EARLY_MOMENTUM + TREND_CONTINUATION|75.56|4.34%|0.44%|5.39%|-2.21%|8.23%|11.47%|-4.25%|0.00%|TR Hisse %84.7|
-|11|GSP|AZİMUT PYŞ KAR PAYI ÖDEYEN HİSSE SENEDİ FONU (HİSSE SENEDİ YOĞUN FON)|Hisse Senedi|REVERSAL + EARLY_MOMENTUM + TREND_CONTINUATION|74.88|4.91%|-1.26%|5.96%|-1.04%|7.63%|16.17%|-5.68%|-0.03%||
-|12|HKG|ZİRAAT PORTFÖY HALK'IN ÜRETEN KADINLARI DEĞİŞKEN FON|Değişken|EARLY_MOMENTUM + TREND_CONTINUATION|74.80|3.96%|1.70%|9.84%|2.05%|14.33%|18.44%|-5.53%|0.00%|TR Hisse %94.1|
-|13|ICH|PARDUS PORTFÖY İKİNCİ DEĞİŞKEN FON|Değişken|EARLY_MOMENTUM + TREND_CONTINUATION|73.86|2.54%|1.53%|9.18%|3.94%|19.92%|7.11%|-1.05%|0.00%|TR Hisse %52.9|
-|14|OMG|AZİMUT PORTFÖY İKİNCİ HİSSE SENEDİ FONU (HİSSE SENEDİ YOĞUN FON)|Hisse Senedi|REVERSAL + EARLY_MOMENTUM + TREND_CONTINUATION|73.73|3.30%|0.16%|6.54%|-3.31%|9.08%|16.35%|-8.11%|-0.17%||
-|15|ECA|GLOBAL MD PORTFÖY BİRİNCİ DEĞİŞKEN FON|Değişken|EARLY_MOMENTUM + TREND_CONTINUATION|73.10|2.49%|1.44%|8.04%|1.15%|20.11%|15.73%|-4.34%|0.00%|TR Hisse %56.1|
-|16|MTD|BV PORTFÖY MALZEME TEKNOLOJİLERİ DEĞİŞKEN FON|Teknoloji|REVERSAL|72.99|6.53%|-2.02%|15.59%|-2.38%|4.69%|30.63%|-17.52%|-1.70%|Yabancı Hisse %68.1|
-|17|BHA|BULLS PORTFÖY HİSSE SENEDİ (TL) FONU (HİSSE SENEDİ YOĞUN FON)|Hisse Senedi|EARLY_MOMENTUM + TREND_CONTINUATION|72.98|5.61%|0.45%|8.29%|4.68%|17.51%|18.08%|-5.34%|0.00%|TR Hisse %91.0|
-|18|OPL|OSMANLI PORTFÖY İKİNCİ DEĞİŞKEN FON|Değişken|EARLY_MOMENTUM + TREND_CONTINUATION|72.76|3.64%|1.59%|9.26%|2.73%|7.94%|8.34%|-4.70%|0.00%|ETF %18.7|
-|19|YEF|YAPI KREDİ PORTFÖY BIST 30 ENDEKSİ HİSSE SENEDİ FONU (HİSSE SENEDİ YOĞUN FON)|Hisse Senedi|REVERSAL + EARLY_MOMENTUM + TREND_CONTINUATION|72.56|4.33%|3.27%|8.37%|-4.43%|10.90%|19.26%|-10.57%|0.00%|TR Hisse %93.2|
-|20|DPT|DENİZ PORTFÖY BİST TEMETTÜ 25 ENDEKSİ HİSSE SENEDİ FONU ( HİSSE SENEDİ YOĞUN FON )|Hisse Senedi|EARLY_MOMENTUM + TREND_CONTINUATION|72.36|4.36%|0.70%|6.52%|0.55%|11.21%|17.46%|-5.19%|-0.33%|TR Hisse %96.9|
-|21|OHB|OYAK PORTFÖY BİRİNCİ HİSSE SENEDİ (TL) FONU (HİSSE SENEDİ YOĞUN FON)|Hisse Senedi|REVERSAL + EARLY_MOMENTUM + TREND_CONTINUATION|71.80|3.71%|1.64%|7.23%|-2.08%|9.55%|16.62%|-8.58%|-0.01%||
-|22|FD1|ONE PORTFÖY BİRİNCİ DEĞİŞKEN FON|Değişken|EARLY_MOMENTUM + TREND_CONTINUATION|71.77|4.02%|0.40%|6.66%|0.84%|12.62%|11.23%|-2.76%|0.00%|TR Hisse %55.8|
-|23|TE3|TEB PORTFÖY MUTLAK GETİRİ HEDEFLİ DEĞİŞKEN FON|Değişken|REVERSAL + EARLY_MOMENTUM + TREND_CONTINUATION|71.08|2.92%|1.69%|6.67%|-0.24%|8.46%|9.08%|-3.89%|0.00%||
-|24|YLE|YAPI KREDİ PORTFÖY BIST SÜRDÜRÜLEBİLİRLİK ENDEKSİ HİSSE SENEDİ FONU (HİSSE SENEDİ YOĞUN FON)|Hisse Senedi|REVERSAL + EARLY_MOMENTUM + TREND_CONTINUATION|71.05|4.37%|1.31%|6.23%|-1.00%|9.26%|17.79%|-7.32%|0.00%|TR Hisse %95.0|
-|25|FPH|FİBA PORTFÖY HİSSE SENEDİ (TL) FONU (HİSSE SENEDİ YOĞUN FON)|Hisse Senedi|REVERSAL + EARLY_MOMENTUM + TREND_CONTINUATION|70.94|4.02%|1.76%|6.21%|-2.87%|9.67%|17.41%|-9.23%|-0.28%|TR Hisse %89.5|
-|26|EVM|DENİZ PORTFÖY ENERJİ VE MADENCİLİK SEKTÖRÜ DEĞİŞKEN FON|Enerji|EARLY_MOMENTUM + TREND_CONTINUATION|70.87|3.16%|0.94%|9.40%|3.20%|8.20%|12.97%|-7.61%|0.00%|Yabancı ETF %34.2|
-|27|RPM|ROTA PORTFÖY İLAÇ VE MEDİKAL TEKNOLOJİLERİ DEĞİŞKEN FON|Teknoloji|TREND_CONTINUATION|70.77|2.64%|2.46%|9.57%|3.80%|19.27%|11.70%|-1.72%|-0.40%|Yabancı Hisse %59.9|
-|28|ARE|İSTANBUL PORTFÖY YABANCI HİSSE SENEDİ FONU|Yabancı Varlıklar|EARLY_MOMENTUM + TREND_CONTINUATION|70.68|3.56%|-0.37%|9.12%|6.70%|12.42%|16.81%|-4.02%|0.00%||
-|29|GPG|INVEO PORTFÖY BİRİNCİ DEĞİŞKEN FON|Değişken|EARLY_MOMENTUM + TREND_CONTINUATION|70.59|0.93%|-0.90%|7.46%|0.90%|19.56%|16.85%|-5.16%|-0.52%|Yabancı Hisse %65.9|
-|30|AKU|AK PORTFÖY BIST 30 ENDEKSİ HİSSE SENEDİ (TL) FONU (HİSSE SENEDİ YOĞUN FON)|Hisse Senedi|REVERSAL + EARLY_MOMENTUM + TREND_CONTINUATION|70.32|3.94%|2.90%|7.70%|-2.95%|10.74%|20.69%|-9.17%|0.00%||
+|#|Kod|Fon|Tema|Skor|5G|20G|60G|126G|252G|Vol 20G|Max DD 60G|Ana Pozisyon|Tactical Bucket|
+|---:|---|---|---|---:|---:|---:|---:|---:|---:|---:|---:|---|---|
+|1|DGF|A1 CAPİTAL PORTFÖY DEĞİŞKEN FON|Değişken|79.15|3.65%|15.12%|15.42%|15.95%|n/a%|12.04%|-5.27%|Ters Repo %16.2|REVERSAL|
+|2|DNF|A1 CAPİTAL PORTFÖY DİNAMİK FON SEPETİ FONU|Fon Sepeti|76.88|2.96%|8.98%|10.50%|15.94%|n/a%|12.50%|-3.31%|Yatırım Fonu %89.6|REVERSAL + EARLY_MOMENTUM + TREND_CONTINUATION|
+|3|OHK|OYAK PORTFÖY KATILIM HİSSE SENEDİ (TL) FONU (HİSSE SENEDİ YOĞUN FON)|Hisse Senedi|75.85|4.70%|9.40%|12.83%|22.33%|46.07%|15.79%|-4.87%||EARLY_MOMENTUM + TREND_CONTINUATION|
+|4|BV1|BV PORTFÖY BİRİNCİ HİSSE SENEDİ (TL) FON (HİSSE SENEDİ YOĞUN FON)|Hisse Senedi|74.88|4.91%|10.00%|14.74%|5.04%|52.70%|25.24%|-6.86%|TR Hisse %92.0|EARLY_MOMENTUM + TREND_CONTINUATION|
+|5|NKT|NUROL PORTFÖY BİRİNCİ KATILIM HİSSE SENEDİ FONU (HİSSE SENEDİ YOĞUN FON)|Hisse Senedi|74.82|4.47%|8.75%|12.76%|21.19%|n/a%|13.21%|-4.53%|TR Hisse %86.0|EARLY_MOMENTUM + TREND_CONTINUATION|
+|6|YPR|AZİMUT PORTFÖY YILDIZ PAZAR ŞİRKETLERİ HİSSE SENEDİ FONU (HİSSE SENEDİ YOĞUN FON)|Hisse Senedi|74.72|4.18%|7.00%|10.32%|8.44%|41.00%|16.25%|-7.23%|TR Hisse %90.7|REVERSAL + EARLY_MOMENTUM + TREND_CONTINUATION|
+|7|IDI|AZİMUT PORTFÖY İNŞAAT SEKTÖRÜ HİSSE SENEDİ FONU (HİSSE SENEDİ YOĞUN FON)|Hisse Senedi|74.16|7.36%|16.00%|15.68%|27.06%|55.88%|25.82%|-7.66%|TR Hisse %84.0|REVERSAL|
+|8|ICH|PARDUS PORTFÖY İKİNCİ DEĞİŞKEN FON|Değişken|73.55|2.54%|9.18%|19.92%|42.31%|78.20%|7.11%|-1.05%|TR Hisse %52.9|EARLY_MOMENTUM + TREND_CONTINUATION|
+|9|GZG|GARANTİ PORTFÖY SAĞLIK VE GENETİK TEKNOLOJİLERİ DEĞİŞKEN FON|Teknoloji|73.23|3.51%|7.28%|23.46%|31.87%|58.34%|13.71%|-3.07%|Yabancı Hisse %64.0|EARLY_MOMENTUM + TREND_CONTINUATION|
+|10|NLE|NUROL PORTFÖY EMLAK SEKTÖRÜ HİSSE SENEDİ FONU (HİSSE SENEDİ YOĞUN FON)|Hisse Senedi|73.07|4.34%|5.39%|8.23%|10.56%|27.17%|11.47%|-4.25%|TR Hisse %84.7|REVERSAL + EARLY_MOMENTUM + TREND_CONTINUATION|
+
+## CORE — TOP CANDIDATES
+
+|#|Kod|Fon|Tema|Skor|5G|20G|60G|126G|252G|Vol 20G|Max DD 60G|Ana Pozisyon|Tactical Bucket|
+|---:|---|---|---|---:|---:|---:|---:|---:|---:|---:|---:|---|---|
+|1|TRJ|TERA PORTFÖY BİRİNCİ BORÇLANMA ARAÇLARI (TL) FONU|Borçlanma Araçları|89.31|0.97%|3.71%|11.56%|28.90%|64.26%|1.44%|0.00%|DİBS %39.8|TREND_CONTINUATION|
+|2|KHA|PARDUS PORTFÖY İKİNCİ HİSSE SENEDİ (TL) FONU (HİSSE SENEDİ YOĞUN FON)|Hisse Senedi|89.24|3.97%|12.51%|38.75%|55.93%|124.14%|9.80%|-1.73%|TR Hisse %82.6||
+|3|ICH|PARDUS PORTFÖY İKİNCİ DEĞİŞKEN FON|Değişken|87.82|2.54%|9.18%|19.92%|42.31%|78.20%|7.11%|-1.05%|TR Hisse %52.9|EARLY_MOMENTUM + TREND_CONTINUATION|
+|4|PHE|PUSULA PORTFÖY HİSSE SENEDİ FONU (HİSSE SENEDİ YOĞUN FON)|Hisse Senedi|87.42|0.81%|2.45%|40.86%|89.79%|221.63%|12.08%|-3.12%|TR Hisse %76.9||
+|5|PTO|PARDUS PORTFÖY TEMETTÜ ÖDEYEN ŞİRKETLER HİSSE SENEDİ FONU (HİSSE SENEDİ YOĞUN FON)|Hisse Senedi|85.61|0.72%|2.24%|21.26%|31.85%|65.84%|2.64%|-1.98%|TR Hisse %84.5||
+|6|IRF|İSTANBUL PORTFÖY BİRİNCİ FON SEPETİ FONU|Fon Sepeti|85.07|0.73%|2.97%|13.53%|26.03%|60.80%|2.39%|-0.27%|Yatırım Fonu %91.0||
+|7|NJR|NUROL PORTFÖY BİRİNCİ BORÇLANMA ARAÇLARI FONU|Borçlanma Araçları|83.96|0.84%|3.18%|9.97%|23.96%|50.93%|1.40%|0.00%|Özel Sektör Borçlanma %25.2||
+|8|AVT|AK PORTFÖY KISA VADELİ BORÇLANMA ARAÇLARI (TL) FONU|Borçlanma Araçları|82.93|0.81%|3.11%|9.57%|20.94%|47.00%|1.42%|0.00%||TREND_CONTINUATION|
+|9|TZV|ZİRAAT PORTFÖY KISA VADELİ BORÇLANMA ARAÇLARI (TL) FONU|Borçlanma Araçları|82.88|0.79%|3.10%|9.39%|20.48%|44.89%|1.30%|0.00%|DİBS %30.4|TREND_CONTINUATION|
+|10|VKT|V PORTFÖY VAKIFBANK KISA VADELİ BORÇLANMA ARAÇLARI (TL) FONU|Bankacılık / Finans|82.69|0.87%|3.16%|9.45%|20.73%|45.26%|1.31%|0.00%|DİBS %44.7|TREND_CONTINUATION|
+
+## DIVERSIFICATION — TOP CANDIDATES
+
+|#|Kod|Fon|Tema|Skor|5G|20G|60G|126G|252G|Vol 20G|Max DD 60G|Ana Pozisyon|Tactical Bucket|
+|---:|---|---|---|---:|---:|---:|---:|---:|---:|---:|---:|---|---|
+|1|KCV|KUVEYT TÜRK PORTFÖY ÇOKLU VARLIK KATILIM FONU|Katılım|80.95|1.58%|4.96%|7.89%|23.65%|56.29%|4.48%|-1.60%|Yatırım Fonu %12.6|TREND_CONTINUATION|
+|2|TMG|İŞ PORTFÖY YABANCI HİSSE SENEDİ FONU|Yabancı Varlıklar|80.29|-0.91%|4.87%|6.88%|25.17%|48.93%|11.74%|-5.28%|Yabancı Hisse %87.4||
+|3|KNJ|KUVEYT TÜRK PORTFÖY ENERJİ KATILIM FONU|Enerji|79.11|1.94%|8.85%|9.08%|26.45%|70.34%|12.64%|-6.67%|Yabancı Hisse %63.9|TREND_CONTINUATION|
+|4|GZG|GARANTİ PORTFÖY SAĞLIK VE GENETİK TEKNOLOJİLERİ DEĞİŞKEN FON|Teknoloji|78.51|3.51%|7.28%|23.46%|31.87%|58.34%|13.71%|-3.07%|Yabancı Hisse %64.0|EARLY_MOMENTUM + TREND_CONTINUATION|
+|5|RPM|ROTA PORTFÖY İLAÇ VE MEDİKAL TEKNOLOJİLERİ DEĞİŞKEN FON|Teknoloji|78.45|2.64%|9.57%|19.27%|24.65%|65.80%|11.70%|-1.72%|Yabancı Hisse %59.9|TREND_CONTINUATION|
+|6|KDE|KUVEYT TÜRK PORTFÖY DENGELİ KATILIM FONU|Katılım|78.07|1.42%|5.49%|11.62%|26.27%|56.55%|4.34%|-1.28%|TR Hisse %17.5|TREND_CONTINUATION|
+|7|TGE|İŞ PORTFÖY EMTİA YABANCI BYF FON SEPETİ FONU|Yabancı Varlıklar|77.87|2.56%|6.73%|3.34%|29.59%|67.03%|12.69%|-11.38%|Yabancı ETF %93.2|TREND_CONTINUATION|
+|8|OVD|QNB PORTFÖY EMTİA FON SEPETİ FONU|Fon Sepeti|77.57|3.51%|8.24%|6.12%|26.89%|63.60%|10.38%|-9.96%|Yabancı Hisse %76.8|TREND_CONTINUATION|
+|9|CKF|ALBARAKA PORTFÖY ÇOKLU VARLIK KATILIM FONU|Katılım|77.15|0.51%|7.04%|8.65%|30.17%|63.38%|13.92%|-4.88%|Yabancı Hisse %36.7|TREND_CONTINUATION|
+|10|ECV|GLOBAL MD PORTFÖY KISA VADELİ BORÇLANMA ARAÇLARI (TL) FONU|Borçlanma Araçları|76.48|0.85%|3.05%|9.23%|19.85%|43.56%|1.34%|0.00%|DİBS %25.2|TREND_CONTINUATION|
+
+## DEFENSIVE — TOP CANDIDATES
+
+|#|Kod|Fon|Tema|Skor|5G|20G|60G|126G|252G|Vol 20G|Max DD 60G|Ana Pozisyon|Tactical Bucket|
+|---:|---|---|---|---:|---:|---:|---:|---:|---:|---:|---:|---|---|
+|1|TZV|ZİRAAT PORTFÖY KISA VADELİ BORÇLANMA ARAÇLARI (TL) FONU|Borçlanma Araçları|90.39|0.79%|3.10%|9.39%|20.48%|44.89%|1.30%|0.00%|DİBS %30.4|TREND_CONTINUATION|
+|2|TRJ|TERA PORTFÖY BİRİNCİ BORÇLANMA ARAÇLARI (TL) FONU|Borçlanma Araçları|90.22|0.97%|3.71%|11.56%|28.90%|64.26%|1.44%|0.00%|DİBS %39.8|TREND_CONTINUATION|
+|3|VKT|V PORTFÖY VAKIFBANK KISA VADELİ BORÇLANMA ARAÇLARI (TL) FONU|Bankacılık / Finans|89.89|0.87%|3.16%|9.45%|20.73%|45.26%|1.31%|0.00%|DİBS %44.7|TREND_CONTINUATION|
+|4|TSI|İŞ PORTFÖY MAKSİMUM HESAP KISA VADELİ BORÇLANMA ARAÇLARI (TL) FONU|Borçlanma Araçları|89.65|0.81%|3.09%|9.20%|19.93%|44.45%|1.30%|0.00%|DİBS %41.6|TREND_CONTINUATION|
+|5|HKV|ZİRAAT PORTFÖY HALKBANK KISA VADELİ BORÇLANMA ARAÇLARI (TL) FONU|Bankacılık / Finans|89.58|0.81%|3.14%|9.54%|20.80%|45.44%|1.33%|0.00%|DİBS %39.9|TREND_CONTINUATION|
+|6|TNK|TEB PORTFÖY KISA VADELİ BORÇLANMA ARAÇLARI (TL) FONU|Borçlanma Araçları|89.46|0.79%|3.09%|9.42%|19.73%|44.68%|1.30%|0.00%||TREND_CONTINUATION|
+|7|TIV|İŞ PORTFÖY KISA VADELİ BORÇLANMA ARAÇLARI (TL) FONU|Borçlanma Araçları|89.16|0.84%|3.12%|9.12%|19.37%|43.76%|1.30%|0.00%|DİBS %39.4|TREND_CONTINUATION|
+|8|FYT|QNB PORTFÖY KISA VADELİ BORÇLANMA ARAÇLARI (TL) FONU|Borçlanma Araçları|89.15|0.81%|3.09%|9.38%|19.69%|44.42%|1.31%|0.00%|DİBS %46.6|TREND_CONTINUATION|
+|9|KTV|KUVEYT TÜRK PORTFÖY KISA VADELİ KİRA SERTİFİKALARI KATILIM (TL) FONU|Katılım|88.95|0.72%|2.82%|8.84%|19.73%|43.20%|1.24%|0.00%|Özel Sektör Borçlanma %0.0||
+|10|AVT|AK PORTFÖY KISA VADELİ BORÇLANMA ARAÇLARI (TL) FONU|Borçlanma Araçları|88.59|0.81%|3.11%|9.57%|20.94%|47.00%|1.42%|0.00%||TREND_CONTINUATION|
 
 ## CLAUDE RESEARCH INSTRUCTION
 
-Use this shortlist as STAGE 1 only. For STAGE 2, investigate the highest-ranked candidates using current web research and primary sources where possible.
-Verify retail investability, current fund strategy, KAP disclosures, meaningful portfolio exposures, catalysts, major risks, and whether the quantitative move is supported by current market conditions.
-Do not recommend a fund solely because it appears in this report.
+Treat this report as STAGE 1 only.
+Every daily analysis must separately monitor existing positions/watchlist AND inspect this fresh multi-lane screen for NEW candidates.
+Do not assume the existing watchlist contains the best available idea.
+For Stage 2, prioritize the strongest NEW or materially improving candidates across all four lanes, not only Tactical.
+Verify retail investability, current strategy, KAP/TEFAS disclosures, recent portfolio holdings, manager information, catalysts, risks, fees where relevant, and actual portfolio overlap.
+For Defensive candidates, compare against the user's deposit only after calculating the relevant same-horizon net deposit return and downside/liquidity trade-off.
+A fund must not become BUY/OPPORTUNITY merely because it ranks highly here.
+Zero new actionable opportunities is a valid result.

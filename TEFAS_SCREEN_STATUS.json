@@ -1,7 +1,8 @@
 {
   "success": true,
+  "screen_version": "V2_MULTI_LANE",
   "dataset_latest_date": "2026-08-25",
-  "source_generated_at_local": "2026-08-25 06:34:07",
+  "source_generated_at_local": "2026-08-25 07:23:50",
   "source_fund_count": 2063,
   "classification_counts": {
     "RETAIL_CANDIDATE": 612,
@@ -9,7 +10,14 @@
     "EXCLUDE": 153
   },
   "screenable_retail_count": 579,
-  "shortlist_count": 30,
+  "shortlist_count": 45,
+  "lane_top_n": 15,
+  "lane_counts": {
+    "TACTICAL": 15,
+    "CORE": 15,
+    "DIVERSIFICATION": 15,
+    "DEFENSIVE": 15
+  },
   "shortlist_file": "TEFAS_SHORTLIST.csv",
   "report_file": "TEFAS_SCREENING_REPORT.md"
 }
