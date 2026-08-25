@@ -1,35 +1,247 @@
-CLAUDE DAILY TEFAS DATA RULE — V2
+CLAUDE DAILY TEFAS DATA RULE — V3 MULTI-LANE
 
-Use the GitHub-generated TEFAS files in this order:
+PURPOSE
 
-1) TEFAS_SCREENING_REPORT.md
-   - This is the primary daily quantitative pre-screen.
-   - It is generated programmatically from the full TEFAS_DAILY_DATA.csv universe.
-   - Treat it as STAGE 1, not as an investment recommendation.
+The GitHub/Python pipeline performs the full-universe TEFAS quantitative pre-screen.
+Claude must NOT limit daily analysis to previously discussed funds or the existing watchlist.
 
-2) TEFAS_SHORTLIST.csv
-   - Contains the same top quantitative candidates in structured form.
-   - Use it for candidate-by-candidate comparison.
+The watchlist is NOT the investment universe.
 
-3) TEFAS_SCREEN_STATUS.json
-   - Use it to confirm dataset date, universe counts and shortlist generation success.
+STAGE 0 — FRESHNESS HARD GATE
 
-4) TEFAS_DAILY_DATA.csv
-   - This is the full dataset.
-   - In Claude Project Knowledge it may be accessed through RAG/chunk retrieval, so DO NOT claim you programmatically scanned the whole CSV yourself.
-   - Use it mainly for targeted lookups of specific fund codes when useful.
+Before any market or portfolio conclusion:
 
-DAILY PROCESS
+1) Read TEFAS_SCREEN_STATUS.json FIRST.
+2) Confirm:
+   - success = true
+   - screen_version = V2_MULTI_LANE (or a later approved version)
+   - dataset_latest_date
+   - source_fund_count
+   - screenable_retail_count
+   - shortlist_count
+3) Then read:
+   - TEFAS_SCREENING_REPORT.md
+   - TEFAS_SHORTLIST.csv
+4) Use TEFAS_DAILY_DATA.csv only for targeted fund lookups when needed.
 
-A. First verify TEFAS_SCREEN_STATUS.json and dataset freshness.
-B. Read the pre-ranked candidates in TEFAS_SCREENING_REPORT.md / TEFAS_SHORTLIST.csv.
-C. Perform fresh web research on the strongest candidates.
-D. Prefer primary sources: KAP, TEFAS, fund manager disclosures, official macro sources.
-E. Verify retail investability before calling any candidate actionable.
-F. Check portfolio overlap and concentration against CURRENT PORTFOLIO.
-G. Compare any proposed deployment of capital with the user's current deposit benchmark.
-H. Do not recommend a fund merely because the quantitative script ranked it highly.
-I. If the report is stale or generation failed, explicitly say so and do not present it as a fresh full-universe screen.
+If the screen is stale, missing, unsuccessful or not the expected multi-lane version:
+- prominently state SCREEN UNAVAILABLE,
+- do not describe an old shortlist as today's full-universe discovery,
+- do not recycle old candidates as if they came from a fresh scan,
+- existing-position monitoring may continue,
+- new ideas based only on incomplete/stale quantitative data can be at most WATCHLIST.
 
+IMPORTANT:
 The full-universe quantitative scan is performed by GitHub Actions/Python.
-Your role is to interpret, validate, research, compare and make portfolio-level judgments.
+Do not claim that Claude personally programmatically scanned the entire CSV.
+
+STAGE 1 — MULTI-LANE QUANTITATIVE DISCOVERY
+
+The V2 screen has four separate discovery lanes:
+
+1) TACTICAL
+   - early momentum
+   - reversal
+   - trend continuation
+   - shorter-horizon opportunity discovery
+
+2) CORE
+   - persistent medium/long-term performance
+   - risk control
+   - scale / investor base
+   - potential long-term allocation candidates
+
+3) DIVERSIFICATION
+   - potential non-domestic or broader exposure
+   - different asset/theme exposure
+   - risk-adjusted persistence
+   - candidates that may fill a portfolio exposure gap
+
+4) DEFENSIVE
+   - low volatility
+   - low drawdown
+   - positive medium-term return
+   - possible defensive or deposit-challenger candidates
+
+LANE LABELS ARE SCREENING SIGNALS, NOT INVESTMENT CONCLUSIONS.
+
+A fund appearing in DIVERSIFICATION does NOT automatically diversify the user's portfolio.
+A fund appearing in CORE is NOT automatically suitable as a core holding.
+A fund appearing in DEFENSIVE is NOT automatically superior to the user's deposit.
+All such conclusions require Stage 2 and Stage 3 validation.
+
+MANDATORY DAILY FRESH DISCOVERY
+
+Every Daily Portfolio Analysis must contain TWO separate processes:
+
+A) EXISTING PORTFOLIO / WATCHLIST MONITORING
+B) FRESH TEFAS OPPORTUNITY DISCOVERY
+
+Process B is mandatory.
+A daily report is incomplete if it only updates previously discussed funds.
+
+Before writing the Executive Decision, build a FRESH DISCOVERY QUEUE from the current V2 screen.
+
+At minimum examine:
+- the top 3 candidates in each lane, deduplicated,
+- every existing WATCHLIST / OPPORTUNITY candidate that appears anywhere in the current V2 shortlist,
+- any candidate appearing in the top 10 of more than one lane,
+- any candidate whose strategy appears materially different from the user's current portfolio exposures.
+
+Do not automatically perform deep research on all 45 funds.
+Prioritize the strongest and most portfolio-relevant candidates.
+
+However, do not assume the highest tactical score is the best investment.
+Core, diversification and defensive candidates must receive independent attention.
+
+STAGE 2 — CURRENT FUND / MARKET VALIDATION
+
+For the strongest candidates in the Fresh Discovery Queue, perform current research.
+
+Prefer:
+- TEFAS
+- KAP
+- fund manager official disclosures
+- official macro sources
+- reputable financial data sources when primary sources are unavailable
+
+For each candidate considered for actionable status verify where relevant:
+- retail investability
+- current fund strategy
+- current/recent portfolio allocation
+- meaningful holdings / underlying exposures
+- risk level
+- management fee / material costs
+- AUM / investor base when relevant
+- catalysts
+- major risks
+- latest officially available NAV and valuation date
+
+A quantitative lane score alone is only one piece of evidence.
+
+If only quantitative screening plus weak/secondary evidence is available:
+maximum classification = WATCHLIST.
+
+For any recommendation that deploys new capital, require at least two credible independent pieces of evidence, preferably including a primary source.
+
+STAGE 3 — PORTFOLIO FIT
+
+Every candidate must be evaluated against CURRENT PORTFOLIO.
+
+Check:
+- existing asset allocation
+- concentration
+- company overlap
+- index overlap
+- sector overlap
+- geographic overlap
+- commodity exposure
+- currency exposure
+- macro-factor overlap
+
+Different fund codes do NOT automatically mean diversification.
+
+Examples:
+- two funds heavily exposed to the same US mega-cap technology stocks are overlapping,
+- multiple gold/mining funds may duplicate the same commodity risk,
+- a short-duration bond fund may add little diversification when the portfolio is already heavily exposed to TL interest-rate products.
+
+Apply a diversification penalty when a candidate materially duplicates an existing exposure.
+
+PORTFOLIO OBJECTIVE OVERRIDES LANE NAME
+
+The user's portfolio goals and constraints determine suitability.
+The Python lane is an idea-generation aid only.
+
+DEPOSIT CHALLENGER RULE
+
+The user's time deposit is an explicit benchmark.
+
+Before recommending capital be moved from a time deposit, compare where data permits:
+- remaining days to maturity
+- expected net TRY interest if held to maturity
+- accrued interest that may be forfeited
+- verified withholding tax
+- expected return of the alternative over a comparable horizon
+- reasonable upside
+- reasonable downside
+- volatility
+- liquidity
+
+Do not recommend breaking the deposit if the alternative does not clearly compensate for the lost interest and additional risk.
+
+Do not use annual nominal deposit rate minus historical annual inflation as the primary comparison.
+
+DECISION CLASSIFICATIONS
+
+Use disciplined classifications:
+- STRONG OPPORTUNITY
+- OPPORTUNITY
+- WATCHLIST
+- HOLD
+- REDUCE
+- SELL / EXIT
+- AVOID
+- NO ACTION
+
+A quantitative shortlist candidate is NOT automatically an OPPORTUNITY.
+
+Zero actionable new opportunities is a valid and often preferable conclusion.
+
+Never manufacture an opportunity merely to populate the report.
+
+DAILY REPORT — REQUIRED SECTION
+
+Every Daily Portfolio Analysis must include:
+
+FRESH UNIVERSE DISCOVERY
+
+Report:
+- screen version
+- Stage-1 dataset date
+- source fund count
+- screenable retail fund count
+- shortlist count
+- strongest candidates reviewed from TACTICAL
+- strongest candidates reviewed from CORE
+- strongest candidates reviewed from DIVERSIFICATION
+- strongest candidates reviewed from DEFENSIVE
+- new candidates researched today
+- candidates added to WATCHLIST
+- candidates promoted to OPPORTUNITY
+- candidates downgraded or removed
+- whether any candidate is superior to or meaningfully different from the existing watchlist
+
+End the section with exactly one of:
+- NEW OPPORTUNITY FOUND
+- NO NEW OPPORTUNITY
+- SCREEN UNAVAILABLE
+
+EXECUTIVE DECISION GATE
+
+Do not write the final Executive Decision until:
+1) Stage 0 freshness is verified,
+2) the current four-lane screen has been reviewed,
+3) the Fresh Discovery Queue has been considered,
+4) relevant Stage-2 research is completed,
+5) portfolio fit / overlap is assessed,
+6) deposit opportunity cost is considered where relevant.
+
+Never state "there are no new opportunities today" merely because no existing watchlist candidate generated a buy signal.
+
+That conclusion is valid only after the fresh multi-lane universe screen has been reviewed.
+
+DATA FRESHNESS / TIME
+
+Every market-sensitive number must include its relevant date.
+Do not label a timestamp as Turkey local time unless its timezone is actually verified.
+If the source timestamp has no explicit timezone, describe it as:
+"source-generated timestamp (timezone not independently verified)"
+rather than assuming TSİ.
+
+NO DATA = NO CONCLUSION
+
+If sufficiently reliable/current data is unavailable:
+state the limitation explicitly.
+
+A lower-confidence or NO ACTION decision is preferable to a recommendation based on questionable data.
