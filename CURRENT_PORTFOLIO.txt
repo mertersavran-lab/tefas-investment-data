@@ -1,0 +1,212 @@
+CURRENT PORTFOLIO — V2 MASTER DATA
+Last master-data revision: 2026-08-25
+Base currency: TRY
+Purpose: Source of truth for Claude Stage-3 portfolio-fit and allocation analysis.
+
+======================================================================
+CRITICAL DATA-USAGE RULES
+======================================================================
+
+1. HOLDING QUANTITY / PRINCIPAL is the authoritative field when marked CONFIRMED.
+2. REFERENCE VALUE is NOT automatically a current market value.
+3. Before any BUY / SELL / REDUCE / allocation-size decision, refresh market-sensitive values where possible.
+4. Never infer that an omitted asset does not exist merely because an older portfolio snapshot omitted it.
+5. Never infer exact values from approximate "~" values.
+6. If verification_status = NEEDS_CONFIRMIRMATION, do not use that figure as an exact amount.
+7. Portfolio weights based on stale reference prices are indicative only.
+8. Deposit principal and maturity details are contractual/reference data and should not be replaced by market estimates.
+9. Physical gold is an existing COMMODITY / PRECIOUS METALS exposure. Any new gold, mining, precious-metal or broad-commodity fund must be checked for overlap with this holding.
+10. YAY and YJK create overlapping global technology / AI / semiconductor exposure. Any foreign-equity or technology fund must be checked for underlying holdings and factor overlap before being called diversification.
+11. TUPRS and PHE create Turkish-equity exposure. Any new BIST fund must be checked for overlap and small/mid-cap liquidity risk.
+12. If a later user message provides a changed position, the later user-provided data overrides this file.
+
+======================================================================
+PORTFOLIO OBJECTIVE / CONSTRAINTS
+======================================================================
+
+Primary objective:
+- Increase global diversification over time and reduce excessive concentration in Turkey-specific assets.
+
+Risk stance:
+- Willing to take meaningful investment risk, but avoid purely speculative / uncompensated risk.
+- Strong historical performance alone is not sufficient reason to buy.
+
+Time deposits:
+- Temporary capital-parking instruments, NOT preferred strategic long-term allocation.
+- Both deposits mature on 2026-09-30.
+- At maturity the entire matured amount can be reconsidered from zero.
+- Before maturity, do not recommend breaking deposits unless expected incremental return clearly compensates for forfeited interest and added risk.
+
+======================================================================
+CURRENT HOLDINGS
+======================================================================
+
+[1] TIME DEPOSIT — ACCOUNT 1
+asset_class: CASH / TIME DEPOSIT
+currency: TRY
+principal_try: 1,175,000
+annual_gross_rate_pct: 42.50
+maturity_date: 2026-09-30
+quantity_status: CONFIRMED
+last_confirmed_date: 2026-08-18
+liquidity_note: Early withdrawal may cause loss of accrued interest; verify bank terms before recommending early exit.
+strategic_role: TEMPORARY CAPITAL PARKING
+
+[2] TIME DEPOSIT — ACCOUNT 2
+asset_class: CASH / TIME DEPOSIT
+currency: TRY
+principal_try: 330,000
+annual_gross_rate_pct: 42.00
+maturity_date: 2026-09-30
+quantity_status: CONFIRMED
+last_confirmed_date: 2026-08-18
+liquidity_note: Early withdrawal may cause loss of accrued interest; verify bank terms before recommending early exit.
+strategic_role: TEMPORARY CAPITAL PARKING
+
+TOTAL TIME-DEPOSIT PRINCIPAL: TRY 1,505,000
+status: CONFIRMED
+
+---------------------------------------------------------------------
+
+[3] PHYSICAL GOLD
+asset_class: COMMODITY / PRECIOUS METALS
+instrument: Physical gold
+quantity_grams: 169
+quantity_status: CONFIRMED
+last_confirmed_date: 2026-08-18
+reference_gold_price_try_per_g: 6,765
+reference_value_try: 1,143,285
+reference_value_date: 2026-08-17
+reference_value_status: STALE_REFERENCE — refresh before current valuation
+strategic_role: INFLATION / FX / SAFE-HAVEN EXPOSURE
+overlap_rule: New gold, precious-metal, mining or commodity funds must be evaluated against this already-large commodity exposure.
+
+---------------------------------------------------------------------
+
+[4] YLB / MONEY-MARKET POSITION
+asset_class: MONEY MARKET / SHORT-DURATION TL
+instrument_code: YLB
+reference_value_try: approximately 199,000+
+verification_status: NEEDS_CONFIRMATION
+last_known_date: 2026-08-18
+strategic_role: LIQUIDITY / CASH MANAGEMENT
+analysis_rule: Do not treat TRY 199,000 as an exact current balance until reconfirmed.
+
+---------------------------------------------------------------------
+
+[5] TUPRS — TÜPRAŞ
+asset_class: TURKISH EQUITY
+ticker: TUPRS
+quantity_shares: 190
+quantity_status: CONFIRMED
+average_cost_try_per_share: 231.55
+last_confirmed_quantity_date: 2026-08-13
+reference_value_try: approximately 68,732
+reference_value_date: 2026-08-18
+reference_value_status: STALE_REFERENCE — use fresh market price for current valuation
+strategic_role: TURKEY / ENERGY / REFINING EQUITY
+overlap_rule: Energy-sector funds may overlap with TUPRS and should not automatically be treated as diversification.
+
+---------------------------------------------------------------------
+
+[6] PHE — PUSULA PORTFÖY HİSSE SENEDİ FONU
+asset_class: TURKISH EQUITY FUND
+fund_code: PHE
+quantity_units: 15,032
+quantity_status: LAST_CONFIRMED_2026-08-11 — no later sale is recorded
+reference_value_try: 58,563.15
+reference_value_date: 2026-08-11
+reference_value_status: STALE_REFERENCE — refresh official NAV before current valuation
+strategic_role: TURKEY EQUITY
+risk_note: Any liquidity / concentration / regulatory red flags require current primary-source validation before an executable SELL recommendation.
+execution_rule: Do not assume the 2026-08-25 Claude SELL recommendation has been executed.
+
+---------------------------------------------------------------------
+
+[7] YJK — YAPI KREDİ PORTFÖY ROBOTİK VE YARI İLETKEN TEKNOLOJİLERİ FON SEPETİ FONU
+asset_class: GLOBAL THEMATIC FUND
+fund_code: YJK
+quantity_units: 5,027
+quantity_status: LAST_CONFIRMED_2026-08-11 — no later sale is recorded
+reference_value_try: 29,280.32
+reference_value_date: 2026-08-11
+reference_value_status: STALE_REFERENCE — refresh official NAV before current valuation
+strategic_role: GLOBAL ROBOTICS / SEMICONDUCTORS / AI
+overlap_rule: Check overlap with YAY and any new US technology / AI / semiconductor fund.
+
+---------------------------------------------------------------------
+
+[8] YAY — YAPI KREDİ PORTFÖY YABANCI TEKNOLOJİ SEKTÖRÜ HİSSE SENEDİ FONU
+asset_class: GLOBAL THEMATIC EQUITY FUND
+fund_code: YAY
+quantity_units: 9
+quantity_status: LAST_CONFIRMED_2026-08-11 — no later sale is recorded
+reference_value_try: 16,475.05
+reference_value_date: 2026-08-11
+reference_value_status: STALE_REFERENCE — refresh official NAV before current valuation
+strategic_role: GLOBAL / US TECHNOLOGY
+overlap_rule: Check company/index/factor overlap with YJK, AFA, TMG and other global technology funds before calling a new fund diversification.
+
+======================================================================
+REFERENCE PORTFOLIO SNAPSHOT
+======================================================================
+
+The following is ONLY an approximate reference snapshot using mixed-date reference values.
+It is NOT a live portfolio valuation.
+
+Time deposits:                  TRY 1,505,000
+Physical gold:                  TRY 1,143,285   [17 Aug reference]
+YLB / money market:             ~TRY 199,000+   [needs confirmation]
+TUPRS:                          ~TRY 68,732      [18 Aug reference]
+PHE:                            TRY 58,563.15   [11 Aug reference]
+YJK:                            TRY 29,280.32   [11 Aug reference]
+YAY:                            TRY 16,475.05   [11 Aug reference]
+
+Approximate mixed-date portfolio value: ~TRY 3.02 million
+
+Approximate weights using those mixed-date references:
+- Time deposits: ~49.8%
+- Physical gold: ~37.9%
+- YLB / money market: ~6.6%
+- TUPRS: ~2.3%
+- PHE: ~1.9%
+- YJK: ~1.0%
+- YAY: ~0.5%
+
+IMPORTANT:
+These weights are not current market weights because the reference values come from different dates and YLB is approximate.
+
+======================================================================
+MANDATORY CLAUDE STAGE-3 CHECK
+======================================================================
+
+Before making an executable portfolio change:
+
+A. Refresh current prices/NAVs for market-sensitive holdings where possible.
+B. State which values are:
+   - CONFIRMED CURRENT
+   - LATEST OFFICIAL NAV
+   - STALE REFERENCE
+   - NEEDS CONFIRMATION
+C. Recalculate total portfolio value and weights using the refreshed values.
+D. Check overlap across:
+   - Turkish equity
+   - global technology / AI / semiconductors
+   - commodities / precious metals
+   - TL interest-rate exposure
+   - FX exposure
+E. Do NOT call OVD or another commodity fund a "new asset-class exposure" without accounting for the existing 169g physical-gold holding.
+F. Do NOT size a new position from the old ~TRY 1.64m portfolio snapshot.
+G. Do NOT assume any recommended transaction has occurred unless the user explicitly confirms execution.
+
+======================================================================
+KNOWN DATA GAPS
+======================================================================
+
+1. YLB exact current balance needs confirmation.
+2. PHE exact current units/value should be reconfirmed if any transaction occurred after 2026-08-11.
+3. YJK exact current units/value should be reconfirmed if any transaction occurred after 2026-08-11.
+4. YAY exact current units/value should be reconfirmed if any transaction occurred after 2026-08-11.
+5. Current market/NAV values should be refreshed before any allocation decision.
+
+END OF CURRENT PORTFOLIO — V2 MASTER DATA
