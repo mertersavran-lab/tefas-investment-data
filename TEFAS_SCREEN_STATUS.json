@@ -1,8 +1,8 @@
 {
   "success": true,
   "screen_version": "V2_MULTI_LANE",
-  "dataset_latest_date": "2026-09-21",
-  "source_generated_at_local": "2026-09-21 13:16:07",
+  "dataset_latest_date": "2026-09-22",
+  "source_generated_at_local": "2026-09-22 10:03:05",
   "source_fund_count": 2074,
   "classification_counts": {
     "RETAIL_CANDIDATE": 618,
