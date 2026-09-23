@@ -1,8 +1,8 @@
 {
-  "started_at": "2026-09-23T12:02:24.225138",
+  "started_at": "2026-09-23T13:43:55.963358",
   "success": true,
   "output_file": "/home/runner/work/tefas-investment-data/tefas-investment-data/TEFAS_DAILY_DATA.csv",
-  "finished_at": "2026-09-23T12:02:43.871709",
+  "finished_at": "2026-09-23T13:44:15.146287",
   "dataset_latest_date": "2026-09-23",
   "fund_count": 2074,
   "breakdown_date": "2026-09-23",
