@@ -1,10 +1,10 @@
 {
-  "started_at": "2026-09-23T13:43:55.963358",
+  "started_at": "2026-09-24T10:15:18.507411",
   "success": true,
   "output_file": "/home/runner/work/tefas-investment-data/tefas-investment-data/TEFAS_DAILY_DATA.csv",
-  "finished_at": "2026-09-23T13:44:15.146287",
-  "dataset_latest_date": "2026-09-23",
-  "fund_count": 2074,
-  "breakdown_date": "2026-09-23",
+  "finished_at": "2026-09-24T10:15:38.083881",
+  "dataset_latest_date": "2026-09-24",
+  "fund_count": 2075,
+  "breakdown_date": "2026-09-24",
   "message": "TEFAS_DAILY_DATA.csv başarıyla güncellendi."
 }
