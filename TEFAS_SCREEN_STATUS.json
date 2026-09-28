@@ -1,19 +1,19 @@
 {
   "success": true,
   "screen_version": "V2_MULTI_LANE",
-  "dataset_latest_date": "2026-09-25",
-  "source_generated_at_local": "2026-09-25 12:14:37",
-  "source_fund_count": 2076,
+  "dataset_latest_date": "2026-09-28",
+  "source_generated_at_local": "2026-09-28 09:33:53",
+  "source_fund_count": 2077,
   "classification_counts": {
     "RETAIL_CANDIDATE": 620,
-    "VERIFY_ELIGIBILITY": 1297,
+    "VERIFY_ELIGIBILITY": 1298,
     "EXCLUDE": 159
   },
-  "screenable_retail_count": 583,
-  "shortlist_count": 39,
+  "screenable_retail_count": 585,
+  "shortlist_count": 45,
   "lane_top_n": 15,
   "lane_counts": {
-    "TACTICAL": 6,
+    "TACTICAL": 12,
     "CORE": 15,
     "DIVERSIFICATION": 15,
     "DEFENSIVE": 15

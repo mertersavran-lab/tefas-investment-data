@@ -1,14 +1,14 @@
 # TEFAS DAILY MULTI-LANE QUANTITATIVE SCREEN — V2
 
-- Dataset latest date: **2026-09-25**
-- Source dataset generated timestamp (as supplied): **2026-09-25 12:14:37**
-- Total funds in source dataset: **2076**
+- Dataset latest date: **2026-09-28**
+- Source dataset generated timestamp (as supplied): **2026-09-28 09:33:53**
+- Total funds in source dataset: **2077**
 - RETAIL_CANDIDATE: **620**
-- VERIFY_ELIGIBILITY: **1297**
+- VERIFY_ELIGIBILITY: **1298**
 - EXCLUDE: **159**
-- Current retail funds with >= 80 observations before completeness filter: **584**
-- Quantitatively screenable retail funds after required-data filter: **583**
-- Combined multi-lane shortlist size: **39**
+- Current retail funds with >= 80 observations before completeness filter: **586**
+- Quantitatively screenable retail funds after required-data filter: **585**
+- Combined multi-lane shortlist size: **45**
 
 ## IMPORTANT
 
@@ -30,57 +30,61 @@ Defensive scores are NOT a claim that a fund beats the user's deposit. The depos
 
 |#|Kod|Fon|Tema|Skor|5G|20G|60G|126G|252G|Vol 20G|Max DD 60G|Ana Pozisyon|Tactical Bucket|
 |---:|---|---|---|---:|---:|---:|---:|---:|---:|---:|---:|---|---|
-|1|TGE|İŞ PORTFÖY EMTİA YABANCI BYF FON SEPETİ FONU|Yabancı Varlıklar|81.68|0.90%|5.44%|18.88%|19.76%|65.41%|8.81%|-3.20%|Yabancı ETF %92.1|TREND_CONTINUATION|
-|2|EBD|GLOBAL MD PORTFÖY İKİNCİ DEĞİŞKEN FON|Değişken|74.60|0.92%|2.84%|-1.58%|32.31%|60.28%|11.49%|-5.45%|Yabancı Hisse %85.1|EARLY_MOMENTUM|
-|3|TFU|İŞ PORTFÖY TÜFEYE ENDEKSLİ BORÇLANMA ARAÇLARI (TL) FONU|Borçlanma Araçları|74.41|0.54%|2.04%|5.85%|17.29%|n/a%|1.01%|-0.01%|DİBS %85.5|TREND_CONTINUATION|
-|4|TMC|İŞ PORTFÖY TEMA DEĞİŞKEN FON|Değişken|72.49|0.62%|3.05%|9.88%|17.15%|31.72%|10.05%|-0.96%|TR Hisse %55.8|TREND_CONTINUATION|
-|5|IBB|İŞ PORTFÖY ATAK DEĞİŞKEN FON|Değişken|71.00|0.54%|2.99%|4.60%|17.67%|38.66%|3.66%|-0.85%|Ters Repo %76.4|TREND_CONTINUATION|
-|6|KIA|TRIVE PORTFÖY MUTLAK GETİRİ HEDEFLİ DEĞİŞKEN FON|Değişken|67.15|0.24%|2.88%|4.11%|5.06%|25.67%|9.89%|-3.41%|Ters Repo %20.4|EARLY_MOMENTUM + TREND_CONTINUATION|
+|1|GBG|INVEO PORTFÖY G-20 ÜLKELERİ YABANCI HİSSE SENEDİ FONU|Yabancı Varlıklar|79.57|2.22%|3.27%|6.28%|36.36%|57.11%|12.51%|-3.33%|Yabancı Hisse %84.2|TREND_CONTINUATION|
+|2|AFT|AK PORTFÖY YENİ TEKNOLOJİLER YABANCI HİSSE SENEDİ FONU|Teknoloji|79.37|5.06%|6.83%|10.78%|31.85%|36.69%|25.30%|-9.92%||TREND_CONTINUATION|
+|3|GUH|GARANTİ PORTFÖY YABANCI TEKNOLOJİ HİSSE SENEDİ FONU|Teknoloji|78.60|5.99%|8.90%|8.94%|59.43%|74.00%|24.90%|-10.15%|Yabancı Hisse %93.4|EARLY_MOMENTUM + TREND_CONTINUATION|
+|4|IVY|İSTANBUL PORTFÖY BLOCKCHAIN TEKNOLOJİLERİ DEĞİŞKEN FON|Teknoloji|77.90|3.80%|8.24%|10.80%|45.61%|35.77%|26.74%|-6.63%|Yabancı Hisse %65.1|TREND_CONTINUATION|
+|5|YAY|YAPI KREDİ PORTFÖY YABANCI TEKNOLOJİ SEKTÖRÜ HİSSE SENEDİ FONU|Teknoloji|76.55|6.27%|8.25%|7.24%|57.49%|72.61%|28.37%|-12.22%|Yabancı Hisse %95.9|EARLY_MOMENTUM + TREND_CONTINUATION|
+|6|GBV|GARANTİ PORTFÖY BLOCKCHAİN TEKNOLOJİLERİ DEĞİŞKEN FON|Teknoloji|74.95|2.24%|4.04%|4.54%|42.28%|49.91%|23.31%|-5.99%|Yabancı Hisse %63.4|EARLY_MOMENTUM + TREND_CONTINUATION|
+|7|TFU|İŞ PORTFÖY TÜFEYE ENDEKSLİ BORÇLANMA ARAÇLARI (TL) FONU|Borçlanma Araçları|73.75|0.54%|2.10%|6.02%|17.37%|n/a%|1.09%|-0.01%|DİBS %85.5|TREND_CONTINUATION|
+|8|EBD|GLOBAL MD PORTFÖY İKİNCİ DEĞİŞKEN FON|Değişken|73.23|1.09%|2.57%|-0.71%|31.51%|60.14%|11.42%|-5.38%|Yabancı Hisse %85.3|EARLY_MOMENTUM|
+|9|TMC|İŞ PORTFÖY TEMA DEĞİŞKEN FON|Değişken|72.86|0.53%|2.77%|10.02%|17.49%|32.08%|9.99%|-0.96%|TR Hisse %56.0|TREND_CONTINUATION|
+|10|NTI|NEO PORTFÖY TEKNOLOJİ VE İNOVASYON DEĞİŞKEN FON|Teknoloji|71.97|5.37%|9.02%|1.02%|47.64%|56.66%|22.72%|-16.57%|Yabancı Hisse %68.5|EARLY_MOMENTUM + TREND_CONTINUATION|
 
 ## CORE — TOP CANDIDATES
 
 |#|Kod|Fon|Tema|Skor|5G|20G|60G|126G|252G|Vol 20G|Max DD 60G|Ana Pozisyon|Tactical Bucket|
 |---:|---|---|---|---:|---:|---:|---:|---:|---:|---:|---:|---|---|
-|1|TRJ|TERA PORTFÖY BİRİNCİ BORÇLANMA ARAÇLARI (TL) FONU|Borçlanma Araçları|91.65|0.63%|3.10%|10.90%|28.24%|64.41%|1.48%|0.00%|DİBS %25.0||
-|2|VKT|V PORTFÖY VAKIFBANK KISA VADELİ BORÇLANMA ARAÇLARI (TL) FONU|Bankacılık / Finans|88.09|0.66%|2.57%|8.93%|20.67%|44.46%|1.11%|0.00%|DİBS %51.5||
-|3|HKV|ZİRAAT PORTFÖY HALKBANK KISA VADELİ BORÇLANMA ARAÇLARI (TL) FONU|Bankacılık / Finans|88.07|0.73%|2.63%|8.98%|20.85%|44.65%|1.24%|0.00%|DİBS %40.4||
-|4|AVT|AK PORTFÖY KISA VADELİ BORÇLANMA ARAÇLARI (TL) FONU|Borçlanma Araçları|87.99|0.71%|2.69%|9.05%|21.25%|45.87%|1.36%|-0.03%|DİBS %33.7||
-|5|IST|İSTANBUL PORTFÖY KISA VADELİ BORÇLANMA ARAÇLARI (TL) FONU|Borçlanma Araçları|87.95|0.75%|3.00%|9.58%|21.96%|48.17%|1.35%|0.00%|Ters Repo %5.2||
-|6|DBK|DENİZ PORTFÖY KISA VADELİ BORÇLANMA ARAÇLARI (TL) FONU|Borçlanma Araçları|87.65|0.70%|2.69%|8.93%|20.80%|45.21%|1.22%|0.00%|Özel Sektör Borçlanma %30.7||
-|7|RBT|ALBARAKA PORTFÖY KİRA SERTİFİKALARI  KATILIM FONU|Katılım|87.53|0.69%|2.92%|9.62%|21.73%|46.23%|1.37%|0.00%|Özel Sektör Borçlanma %0.0||
-|8|NBO|NEO PORTFÖY BORÇLANMA ARACI FONLARI FON SEPETİ FONU|Borçlanma Araçları|87.39|0.73%|2.66%|9.35%|22.80%|53.01%|1.23%|0.00%|Yatırım Fonu %86.4||
-|9|TZV|ZİRAAT PORTFÖY KISA VADELİ BORÇLANMA ARAÇLARI (TL) FONU|Borçlanma Araçları|87.35|0.76%|2.59%|8.83%|20.56%|44.16%|1.31%|0.00%|DİBS %51.5||
-|10|TSI|İŞ PORTFÖY MAKSİMUM HESAP KISA VADELİ BORÇLANMA ARAÇLARI (TL) FONU|Borçlanma Araçları|87.31|0.71%|2.61%|8.91%|20.32%|43.72%|1.21%|0.00%|DİBS %42.3||
+|1|TRJ|TERA PORTFÖY BİRİNCİ BORÇLANMA ARAÇLARI (TL) FONU|Borçlanma Araçları|92.16|0.66%|3.06%|11.08%|28.42%|64.71%|1.41%|0.00%|DİBS %25.1||
+|2|HKV|ZİRAAT PORTFÖY HALKBANK KISA VADELİ BORÇLANMA ARAÇLARI (TL) FONU|Bankacılık / Finans|88.78|0.71%|2.61%|9.18%|21.23%|44.90%|1.20%|0.00%|DİBS %39.9||
+|3|IST|İSTANBUL PORTFÖY KISA VADELİ BORÇLANMA ARAÇLARI (TL) FONU|Borçlanma Araçları|88.62|0.73%|2.99%|9.79%|22.19%|48.44%|1.33%|0.00%|DİBS %4.6||
+|4|AVT|AK PORTFÖY KISA VADELİ BORÇLANMA ARAÇLARI (TL) FONU|Borçlanma Araçları|88.45|0.67%|2.66%|9.23%|21.45%|46.12%|1.31%|-0.03%|||
+|5|VKT|V PORTFÖY VAKIFBANK KISA VADELİ BORÇLANMA ARAÇLARI (TL) FONU|Bankacılık / Finans|88.30|0.64%|2.51%|9.10%|20.84%|44.65%|1.00%|0.00%|DİBS %52.5||
+|6|RBT|ALBARAKA PORTFÖY KİRA SERTİFİKALARI  KATILIM FONU|Katılım|88.29|0.67%|2.88%|9.81%|21.95%|46.49%|1.31%|0.00%|Özel Sektör Borçlanma %0.0||
+|7|NJR|NUROL PORTFÖY BİRİNCİ BORÇLANMA ARAÇLARI FONU|Borçlanma Araçları|87.85|0.75%|2.85%|9.81%|23.54%|50.22%|1.40%|-0.04%|Özel Sektör Borçlanma %22.2||
+|8|DBK|DENİZ PORTFÖY KISA VADELİ BORÇLANMA ARAÇLARI (TL) FONU|Borçlanma Araçları|87.85|0.68%|2.67%|9.12%|21.03%|45.45%|1.20%|0.00%|Özel Sektör Borçlanma %30.3||
+|9|TZV|ZİRAAT PORTFÖY KISA VADELİ BORÇLANMA ARAÇLARI (TL) FONU|Borçlanma Araçları|87.82|0.71%|2.56%|9.03%|20.87%|44.39%|1.27%|0.00%|DİBS %50.7||
+|10|OSL|OSMANLI PORTFÖY KISA VADELİ BORÇLANMA ARAÇLARI (TL) FONU|Borçlanma Araçları|87.81|0.74%|2.67%|9.31%|21.38%|46.29%|1.26%|0.00%|DİBS %38.2||
 
 ## DIVERSIFICATION — TOP CANDIDATES
 
 |#|Kod|Fon|Tema|Skor|5G|20G|60G|126G|252G|Vol 20G|Max DD 60G|Ana Pozisyon|Tactical Bucket|
 |---:|---|---|---|---:|---:|---:|---:|---:|---:|---:|---:|---|---|
-|1|CPU|AKTİF PORTFÖY TEKNOLOJİ KATILIM FONU|Teknoloji|83.43|1.14%|-1.51%|1.58%|42.47%|75.90%|17.61%|-7.70%|Yabancı Hisse %70.8||
-|2|AFA|AK PORTFÖY AMERİKA YABANCI HİSSE SENEDİ FONU|Yabancı Varlıklar|83.39|1.21%|1.70%|10.65%|33.49%|41.34%|10.60%|-1.80%|Yabancı Hisse %97.4||
-|3|IJZ|İŞ PORTFÖY SİBER GÜVENLİK TEKNOLOJİLERİ DEĞİŞKEN FON|Teknoloji|82.98|-0.64%|-2.02%|5.54%|49.49%|46.99%|15.18%|-5.13%|Yabancı Hisse %72.3||
-|4|TMG|İŞ PORTFÖY YABANCI HİSSE SENEDİ FONU|Yabancı Varlıklar|82.72|0.47%|1.06%|9.89%|30.33%|40.73%|10.44%|-2.07%|Yabancı Hisse %87.2||
-|5|OJT|QNB PORTFÖY TEKNOLOJİ FON SEPETİ FONU|Teknoloji|82.57|2.47%|0.99%|3.73%|38.80%|48.73%|17.03%|-6.70%|Yabancı Hisse %76.4||
-|6|TGE|İŞ PORTFÖY EMTİA YABANCI BYF FON SEPETİ FONU|Yabancı Varlıklar|82.08|0.90%|5.44%|18.88%|19.76%|65.41%|8.81%|-3.20%|Yabancı ETF %92.1|TREND_CONTINUATION|
-|7|KTJ|KUVEYT TÜRK PORTFÖY TEKNOLOJİ KATILIM FONU|Teknoloji|81.86|3.62%|3.76%|5.99%|45.08%|62.41%|18.60%|-8.59%|Yabancı Hisse %77.9||
-|8|OVD|QNB PORTFÖY EMTİA FON SEPETİ FONU|Fon Sepeti|81.81|-0.15%|3.75%|20.20%|18.66%|59.46%|6.24%|-2.82%|Yabancı Hisse %77.7||
-|9|YZC|YAPI KREDİ PORTFÖY FİNTECH VE BLOCKCHAİN TEKNOLOJİLERİ DEĞİŞKEN FON|Teknoloji|81.00|3.62%|2.87%|8.83%|43.93%|50.71%|21.73%|-5.83%|Yabancı Hisse %68.7||
-|10|GZG|GARANTİ PORTFÖY SAĞLIK VE GENETİK TEKNOLOJİLERİ DEĞİŞKEN FON|Teknoloji|80.11|-1.17%|-3.58%|5.37%|32.15%|50.22%|12.39%|-4.72%|Yabancı Hisse %70.3||
+|1|CPU|AKTİF PORTFÖY TEKNOLOJİ KATILIM FONU|Teknoloji|83.99|2.92%|0.02%|4.18%|47.02%|79.55%|18.65%|-6.89%|Yabancı Hisse %70.5||
+|2|TMG|İŞ PORTFÖY YABANCI HİSSE SENEDİ FONU|Yabancı Varlıklar|83.71|0.82%|1.02%|9.66%|32.32%|42.78%|10.40%|-2.07%|Yabancı Hisse %87.1||
+|3|OJT|QNB PORTFÖY TEKNOLOJİ FON SEPETİ FONU|Teknoloji|83.50|3.88%|2.02%|5.36%|42.82%|51.42%|17.61%|-6.47%|Yabancı Hisse %77.0||
+|4|IJZ|İŞ PORTFÖY SİBER GÜVENLİK TEKNOLOJİLERİ DEĞİŞKEN FON|Teknoloji|83.32|0.42%|-2.46%|4.67%|50.94%|47.28%|15.11%|-5.13%|Yabancı Hisse %71.6||
+|5|TGE|İŞ PORTFÖY EMTİA YABANCI BYF FON SEPETİ FONU|Yabancı Varlıklar|83.03|0.00%|4.81%|19.13%|20.54%|64.13%|8.93%|-3.20%|Yabancı ETF %92.6||
+|6|OVD|QNB PORTFÖY EMTİA FON SEPETİ FONU|Fon Sepeti|81.62|-0.55%|2.55%|19.60%|19.20%|58.44%|6.00%|-2.82%|Yabancı Hisse %74.0||
+|7|YZC|YAPI KREDİ PORTFÖY FİNTECH VE BLOCKCHAİN TEKNOLOJİLERİ DEĞİŞKEN FON|Teknoloji|81.38|4.06%|4.10%|10.38%|47.90%|52.92%|22.02%|-5.83%|Yabancı Hisse %68.4||
+|8|AFA|AK PORTFÖY AMERİKA YABANCI HİSSE SENEDİ FONU|Yabancı Varlıklar|80.92|1.54%|1.70%|9.96%|36.16%|42.05%|10.60%|-1.80%|||
+|9|KCV|KUVEYT TÜRK PORTFÖY ÇOKLU VARLIK KATILIM FONU|Katılım|80.71|-0.26%|-0.48%|5.12%|21.51%|50.33%|8.19%|-1.81%|TR Hisse %10.7||
+|10|GZG|GARANTİ PORTFÖY SAĞLIK VE GENETİK TEKNOLOJİLERİ DEĞİŞKEN FON|Teknoloji|80.40|-0.40%|-2.73%|4.97%|35.17%|50.90%|12.72%|-4.72%|Yabancı Hisse %68.6||
 
 ## DEFENSIVE — TOP CANDIDATES
 
 |#|Kod|Fon|Tema|Skor|5G|20G|60G|126G|252G|Vol 20G|Max DD 60G|Ana Pozisyon|Tactical Bucket|
 |---:|---|---|---|---:|---:|---:|---:|---:|---:|---:|---:|---|---|
-|1|VKT|V PORTFÖY VAKIFBANK KISA VADELİ BORÇLANMA ARAÇLARI (TL) FONU|Bankacılık / Finans|92.67|0.66%|2.57%|8.93%|20.67%|44.46%|1.11%|0.00%|DİBS %51.5||
-|2|TSI|İŞ PORTFÖY MAKSİMUM HESAP KISA VADELİ BORÇLANMA ARAÇLARI (TL) FONU|Borçlanma Araçları|92.31|0.71%|2.61%|8.91%|20.32%|43.72%|1.21%|0.00%|DİBS %42.3||
-|3|HKV|ZİRAAT PORTFÖY HALKBANK KISA VADELİ BORÇLANMA ARAÇLARI (TL) FONU|Bankacılık / Finans|92.13|0.73%|2.63%|8.98%|20.85%|44.65%|1.24%|0.00%|DİBS %40.4||
-|4|HPV|ZİRAAT PORTFÖY HALKBANK KISA VADELİ KİRA SERTİFİKALARI KATILIM (TL) FONU|Bankacılık / Finans|91.93|0.70%|2.81%|8.98%|20.35%|43.43%|1.25%|0.00%|Özel Sektör Borçlanma %0.0||
-|5|DBK|DENİZ PORTFÖY KISA VADELİ BORÇLANMA ARAÇLARI (TL) FONU|Borçlanma Araçları|91.62|0.70%|2.69%|8.93%|20.80%|45.21%|1.22%|0.00%|Özel Sektör Borçlanma %30.7||
-|6|TNK|TEB PORTFÖY KISA VADELİ BORÇLANMA ARAÇLARI (TL) FONU|Borçlanma Araçları|91.46|0.71%|2.59%|8.79%|20.30%|43.56%|1.23%|0.00%|DİBS %47.0||
-|7|ZPK|ZİRAAT PORTFÖY KISA VADELİ KİRA SERTİFİKASI KATILIM (TL) FONU|Katılım|91.43|0.70%|2.80%|8.98%|20.30%|43.41%|1.25%|0.00%|Özel Sektör Borçlanma %0.0||
-|8|TZV|ZİRAAT PORTFÖY KISA VADELİ BORÇLANMA ARAÇLARI (TL) FONU|Borçlanma Araçları|91.40|0.76%|2.59%|8.83%|20.56%|44.16%|1.31%|0.00%|DİBS %51.5||
-|9|TRJ|TERA PORTFÖY BİRİNCİ BORÇLANMA ARAÇLARI (TL) FONU|Borçlanma Araçları|91.14|0.63%|3.10%|10.90%|28.24%|64.41%|1.48%|0.00%|DİBS %25.0||
-|10|RBV|ALBARAKA PORTFÖY KISA VADELİ KİRA SERTİFİKALARI KATILIM (TL) FONU|Katılım|91.14|0.71%|2.82%|9.06%|20.38%|43.46%|1.29%|0.00%|Özel Sektör Borçlanma %0.0||
+|1|VKT|V PORTFÖY VAKIFBANK KISA VADELİ BORÇLANMA ARAÇLARI (TL) FONU|Bankacılık / Finans|92.52|0.64%|2.51%|9.10%|20.84%|44.65%|1.00%|0.00%|DİBS %52.5||
+|2|TSI|İŞ PORTFÖY MAKSİMUM HESAP KISA VADELİ BORÇLANMA ARAÇLARI (TL) FONU|Borçlanma Araçları|92.04|0.69%|2.58%|9.11%|20.59%|43.95%|1.17%|0.00%|DİBS %42.2||
+|3|HKV|ZİRAAT PORTFÖY HALKBANK KISA VADELİ BORÇLANMA ARAÇLARI (TL) FONU|Bankacılık / Finans|92.03|0.71%|2.61%|9.18%|21.23%|44.90%|1.20%|0.00%|DİBS %39.9||
+|4|HPV|ZİRAAT PORTFÖY HALKBANK KISA VADELİ KİRA SERTİFİKALARI KATILIM (TL) FONU|Bankacılık / Finans|91.88|0.66%|2.77%|9.15%|20.55%|43.65%|1.19%|0.00%|Özel Sektör Borçlanma %0.0||
+|5|ZPK|ZİRAAT PORTFÖY KISA VADELİ KİRA SERTİFİKASI KATILIM (TL) FONU|Katılım|91.76|0.64%|2.73%|9.12%|20.47%|43.60%|1.16%|0.00%|Özel Sektör Borçlanma %0.0||
+|6|RBV|ALBARAKA PORTFÖY KISA VADELİ KİRA SERTİFİKALARI KATILIM (TL) FONU|Katılım|91.49|0.64%|2.75%|9.19%|20.53%|43.64%|1.19%|0.00%|Özel Sektör Borçlanma %0.0||
+|7|TZV|ZİRAAT PORTFÖY KISA VADELİ BORÇLANMA ARAÇLARI (TL) FONU|Borçlanma Araçları|91.40|0.71%|2.56%|9.03%|20.87%|44.39%|1.27%|0.00%|DİBS %50.7||
+|8|TRJ|TERA PORTFÖY BİRİNCİ BORÇLANMA ARAÇLARI (TL) FONU|Borçlanma Araçları|91.22|0.66%|3.06%|11.08%|28.42%|64.71%|1.41%|0.00%|DİBS %25.1||
+|9|DBK|DENİZ PORTFÖY KISA VADELİ BORÇLANMA ARAÇLARI (TL) FONU|Borçlanma Araçları|91.17|0.68%|2.67%|9.12%|21.03%|45.45%|1.20%|0.00%|Özel Sektör Borçlanma %30.3||
+|10|TNK|TEB PORTFÖY KISA VADELİ BORÇLANMA ARAÇLARI (TL) FONU|Borçlanma Araçları|91.10|0.68%|2.55%|8.94%|20.42%|43.79%|1.17%|0.00%|DİBS %47.0||
 
 ## CLAUDE RESEARCH INSTRUCTION
 
