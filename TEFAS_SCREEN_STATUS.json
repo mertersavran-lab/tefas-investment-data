@@ -1,16 +1,16 @@
 {
   "success": true,
   "screen_version": "V2_MULTI_LANE",
-  "dataset_latest_date": "2026-10-05",
-  "source_generated_at_local": "2026-10-05 15:12:33",
+  "dataset_latest_date": "2026-10-06",
+  "source_generated_at_local": "2026-10-06 13:33:33",
   "source_fund_count": 2078,
   "classification_counts": {
     "RETAIL_CANDIDATE": 621,
     "VERIFY_ELIGIBILITY": 1298,
     "EXCLUDE": 159
   },
-  "screenable_retail_count": 585,
-  "shortlist_count": 45,
+  "screenable_retail_count": 586,
+  "shortlist_count": 44,
   "lane_top_n": 15,
   "lane_counts": {
     "TACTICAL": 15,
