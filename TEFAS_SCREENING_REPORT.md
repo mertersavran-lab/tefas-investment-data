@@ -1,7 +1,7 @@
 # TEFAS DAILY MULTI-LANE QUANTITATIVE SCREEN — V2
 
 - Dataset latest date: **2026-10-19**
-- Source dataset generated timestamp (as supplied): **2026-10-19 11:09:39**
+- Source dataset generated timestamp (as supplied): **2026-10-19 13:51:48**
 - Total funds in source dataset: **2078**
 - RETAIL_CANDIDATE: **621**
 - VERIFY_ELIGIBILITY: **1298**
